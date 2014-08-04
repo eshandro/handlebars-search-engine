@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	.container
+		h1 Search Engine
+		h4 Search programming languages
+		form#search-form(action='/search')
+			input(type='text' name='searchTerm' placeholder='Search here')
+			input(type='submit' value='Search')
+		.results
+
+		script(id="results" type="text/x-handlebars-template").
+			<p>{{answer}}</p>
+
+block scripts
+	script(src='http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js')
+	script(src='main.js')
